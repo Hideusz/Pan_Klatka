@@ -15,45 +15,49 @@
             const b = prompt('Podaj 2 liczbe');
             const c = prompt('Podaj 3 liczbe');
             
-            const wynik = document.querySelector('.wynik');
-           
-
-
-                
+            const wynik = document.querySelector('.wynik');     
                 
                 if(a > b)
                 {
                     if(a > c)
                     {
-                        if(b> c)
+                        if(b > c)
                         {
-                            wynik.textContent = a + ' ' + b + ' ' + c;
+                            wynik.textContent = c + ' ' + b + ' ' + a;
                         }
                         else
                         {
-                            wynik.textContent = wynik.textContent = a + ' ' + c + ' ' + b;
+                            wynik.textContent = b + ' ' + c + ' ' + a;
                         }
                     }
                     else
                     {
+                        wynik.textContent = b + ' ' + a + ' ' + c;
+                    }
+                }
+                else if (b > c)
+                {
+                    if(a > c)
+                    {
                         wynik.textContent = c + ' ' + a + ' ' + b;
+                    }
+                    else
+                    {
+                        wynik.textContent = a + ' ' + c + ' ' + b;
                     }
                 }
                 else
                 {
-                    if(a > c)
+                    if(b > a)
                     {
-                        wynik.textContent = b + ' ' + a + ' ' + c;
+                        wynik.textContent = a + ' ' + b + ' ' + c;
                     }
                     else
                     {
-                        wynik.textContent = b + ' ' + c + ' ' + a;
+                        wynik.textContent = b + ' ' + a + ' ' + c;
                     }
                 }
-               
-                
-        
-            
+    
         </script>
     
 </body>
