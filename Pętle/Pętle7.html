@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="liczba1" placeholder="Podaj liczbe">
+        <input type="number" name="liczba2" placeholder="Podaj liczbe">
+        <button type="submit">Oblicz</button>
+    </form>
+    <div class="srednia"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.srednia');
+        form.addEventListener('submit', (e) =>{
+            e.preventDefault();
+            const l1 = parseInt(document.querySelector('input[name = "liczba1"]').value);
+            const l2 = parseInt(document.querySelector('input[name = "liczba2"]').value);
+            let suma = 0;
+            for(let i = l1; i <= l1 + l2; i++)
+            {
+                suma += i;
+            }
+            let srednia = suma / l2;
+            div.textContent = `Średnia ${l2} liczb zaczynając od liczby ${l1} jest równa ${srednia.toFixed(2)}`;
+            
+        });
+    </script>
+</body>
+</html>
