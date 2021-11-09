@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="wynik"></div>
+        <script>
+            const a = prompt('Podaj 1 liczbe');
+            const b = prompt('Podaj 2 liczbe');
+            const c = prompt('Podaj 3 liczbe');
+            
+            const wynik = document.querySelector('.wynik');
+           
+
+
+                
+                
+                if(a > b)
+                {
+                    if(a > c)
+                    {
+                        if(b> c)
+                        {
+                            wynik.textContent = a + ' ' + b + ' ' + c;
+                        }
+                        else
+                        {
+                            wynik.textContent = wynik.textContent = a + ' ' + c + ' ' + b;
+                        }
+                    }
+                    else
+                    {
+                        wynik.textContent = c + ' ' + a + ' ' + b;
+                    }
+                }
+                else
+                {
+                    if(a > c)
+                    {
+                        wynik.textContent = b + ' ' + a + ' ' + c;
+                    }
+                    else
+                    {
+                        wynik.textContent = b + ' ' + c + ' ' + a;
+                    }
+                }
+               
+                
+        
+            
+        </script>
+    
+</body>
+</html>
