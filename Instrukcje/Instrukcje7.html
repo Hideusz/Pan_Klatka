@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="wynik"></div>
+        <script>
+            const znak = prompt('Podaj znak liczbe');
+            var wyniki = 0;
+            
+            const wynik = document.querySelector('.wynik');
+
+            if(znak == '+')
+            {
+                var a = prompt('Podaj 1 liczbe');
+                var b = prompt('Podaj 2 liczbe');
+                a = parseInt(a);
+                b = parseInt(b);
+                wyniki = (a + b);
+                wynik.textContent = 'Wynik z dodawania wynosi: ' + wyniki;
+            }
+            if(znak == '-')
+            {
+                var a = prompt('Podaj 1 liczbe');
+                var b = prompt('Podaj 2 liczbe');
+                a = parseInt(a);
+                b = parseInt(b);
+                wyniki = (a - b);
+                wynik.textContent = 'Wynik z odejmowania wynosi: ' + wyniki;
+            }
+            if(znak == '*')
+            {
+                var a = prompt('Podaj 1 liczbe');
+                var b = prompt('Podaj 2 liczbe');
+                a = parseInt(a);
+                b = parseInt(b);
+                wyniki = (a * b);
+                wynik.textContent = 'Wynik z mnożenia wynosi: ' + wyniki;
+            }
+            if(znak == '/')
+            {
+                var a = prompt('Podaj 1 liczbe');
+                var b = prompt('Podaj 2 liczbe');
+                a = parseInt(a);
+                b = parseInt(b);
+                wyniki = (a / b);
+                wynik.textContent = 'Wynik z dzielenia wynosi: ' + wyniki;
+            }
+           
+            
+        </script>
+    
+</body>
+</html>
