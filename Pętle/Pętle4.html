@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="liczba1" placeholder="Podaj liczbe">
+        <button type="submit">Oblicz silnie</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.wynik');
+        form.addEventListener('submit', (e) =>{
+            e.preventDefault();
+            let a = document.querySelector('input[name = "liczba1"]').value*1;
+            let silnia = 1;
+            if(a == 0)
+            {
+                div.textContent = 0;
+            }
+            else
+            {
+                for(let i = 1; i <= a; i++)
+                {
+                    silnia = silnia * i;
+                }
+                div.textContent = "Silnia z liczby " + a + " wynosi: " + silnia;
+            }
+            
+        });
+    </script>
+</body>
+</html>
