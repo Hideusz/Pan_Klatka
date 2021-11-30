@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="liczba1">
+        <input type="number" name="liczba2">
+        <input type="submit" value="wynik">
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('div.wynik');
+        const sumuj = function(l1,l2){
+            return `Suma liczb ${l1} i ${l2} wynosi: ${l1+l2}`;
+        }
+        const odejmij = function(l1,l2)
+        {
+            return `Różnica liczb ${l1} i ${l2} wynosi: ${l1-l2}`;
+        }
+        const dzielenie = function(l1,l2)
+        {
+            return `Dzielenie z liczb ${l1} i ${l2} wynosi: ${l1/l2}`;
+        }
+        const mnoz = function(l1,l2)
+        {
+            return `Mnożenie liczb ${l1} i ${l2} wynosi: ${l1*l2}`;
+        }
+        const znak = prompt("Podaj znak działania (+,-,/,*)");
+        formularz.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            const l1 = document.querySelector('input[name ="liczba1"]').value*1;
+            const l2 = document.querySelector('input[name ="liczba2"]').value*1;
+            if(znak =='+')
+            {
+                div.textContent = sumuj(l1,l2);
+            }
+            else if(znak == '-')
+            {
+                div.textContent = odejmij(l1,l2);
+            }
+            else if(znak == '/')
+            {
+                div.textContent = dzielenie(l1,l2);
+            }
+            else if(znak == '*')
+            {
+                div.textContent = mnoz(l1,l2);
+            }
+            else
+            {
+                div.textContent = "Błond, zły znak";
+            }
+        });
+
+
+    </script>
+</body>
+</html>
