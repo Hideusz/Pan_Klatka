@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tablica"></div>
+    <div class="suma"></div>
+    <div class="zera"></div>
+    <input type="number" name="liczba">
+    <button>Ile razy</button>
+    <div class="ileliczb"></div>
+    <script>
+        const divTablica = document.querySelector('.tablica');
+        const divSuma = document.querySelector('.suma');
+        const divZera = document.querySelector('.zera');
+        const liczby = [];
+        let suma = 0;
+        let ileZer = 0;
+        let ileLiczba = 0;
+        for(let i=0; i < 100; i++)
+        {
+            liczby[i] = Math.round(Math.random()*100);
+            suma += liczby[i];
+        }
+        for (const liczba of liczby) {
+            if(liczba == 0)
+            {
+                ileZer++;
+            }
+        }
+        divTablica.textContent = liczby.join(', ');
+        divSuma.textContent = "Suma liczb w tablicy wynosi:" + suma;
+        divZera.textContent = "Ilość zer w tablicy: " + ileZer;
+
+        const bnt = document.querySelector("button");
+        const divileLiczba = document.querySelector(".ileliczb");
+        bnt.addEventListener('click',()=> {
+            let ileLiczba = 0;
+            const liczba = document.querySelector('input[name = "liczba"]').value;
+            for (const l of liczby) {
+            if(l == liczba)
+                {
+                    ileLiczba++;
+                }
+            }
+            divileLiczba.textContent = `Liczba ${liczba} w tablicy występuje ${ileLiczba} razy`;
+        })
+    </script>
+</body>
+</html>
