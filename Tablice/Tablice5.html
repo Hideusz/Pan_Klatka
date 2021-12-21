@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+    <input type="number" name="liczba1">
+    <input type="number" name="liczba2">
+    <input type="submit" value="licz">
+    </form> 
+    <div class="tablica"></div>
+
+    <script>
+        const formularz = document.querySelector('form');
+        const divTablica = document.querySelector('.tablica');
+        
+        
+        formularz.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            const liczby = [];
+            const liczby2 = []; 
+            const l1 = document.querySelector('input[name ="liczba1"]').value*1;
+            const l2 = document.querySelector('input[name ="liczba2"]').value*1;
+            for(let i = l1; i <= l2; i++)
+            {
+                if(i%2==0){}
+                else{liczby.push(i);}
+            }
+            for(let i = l1; i <= l2; i++)
+            {
+                if(i%2==0)
+                liczby2.push(i);
+                
+            }
+            liczby.reverse();
+            tab = liczby.concat(liczby2);
+            divTablica.textContent = tab.join(', ');
+        });
+           
+    </script>
+</body>
+</html>
