@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+    <input type="numer" name="liczba1">
+    <input type="submit" value="licz">
+    </form> 
+    <div class="tablica"></div>
+    <div class="liczbaMax"></div>
+    <div class="liczbaMin"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const divTablica = document.querySelector('.tablica');
+        const lmax = document.querySelector('.liczbaMax');
+        const lmin = document.querySelector('.liczbaMin');
+        const liczby = [];
+        var max = 0;
+        var min = 0;
+        
+        formularz.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            const l1 = document.querySelector('input[name ="liczba1"]').value*1;
+            for(let i = 0; i < l1; i++)
+            {
+                liczby[i] = Math.round(Math.random()*100);
+                
+            }
+            max = Math.max(...liczby);
+            min = Math.min(...liczby);
+            divTablica.textContent = liczby.join(', '); 
+            lmax.textContent = `Największa liczba w tablicy ${max}`;
+            lmin.textContent = `Njamniejsza liczba w tablicy ${min}`;
+        });
+           
+    </script>
+</body>
+</html>
