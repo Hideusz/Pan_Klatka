@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="imie">
+    <button>Sprawdź</button>
+    <div class="wynik"></div>       
+    <script>
+        const sprawdzenie = function(wprowadzoneImie){
+            const ostatnialitera = wprowadzoneImie.charAt(wprowadzoneImie.length - 1);
+            if(ostatnialitera == 'a' || ostatnialitera == 'A')
+            {
+                return 'Wprowadzone imie jest żeńskie';
+            }
+            else
+            {
+                return 'Wprowadzone imie jest meskie';
+            }
+        };
+
+        const btn = document.querySelector('button');
+        const div = document.querySelector('div');
+        btn.addEventListener('click', ()=>{
+            const imie = document.querySelector('input[name="imie"]').value;
+            div.textContent = sprawdzenie(imie);
+        })
+           
+    </script>
+</body>
+</html>
