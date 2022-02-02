@@ -21,18 +21,15 @@
                 {
                    x++;
                 }
-                
             }
             return `Wyraz: "${wprowadzonyWyraz}" posiada ${x} samogłosek`;
         };
-
         const btn = document.querySelector('button');
         const div = document.querySelector('div');
         btn.addEventListener('click', ()=>{
             const wyraz = document.querySelector('input[name="wyraz"]').value;
             div.textContent = sprawdzenie(wyraz);
-        })
-           
+        })     
     </script>
 </body>
 </html>
