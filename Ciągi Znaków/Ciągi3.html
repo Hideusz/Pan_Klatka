@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="wyraz">
+    <button>Sprawdź</button>
+    <div class="wynik"></div>       
+    <script>
+        const sprawdzenie = function(wprowadzonyWyraz){
+            let x = 1;
+            const zamiana = wprowadzonyWyraz.toLowerCase();
+            for(let i = wprowadzonyWyraz.length + 1; i--; i<=0)
+            { 
+                const ostatnialitera = zamiana.charAt(wprowadzonyWyraz.length - i);
+                if(ostatnialitera == ' ')
+                {
+                   x++;
+                }
+                
+            }
+            let a = " ";
+            if(x == 1)
+            {
+                 a = "wyraz";
+            }
+            else if(x > 1 && x < 5)
+            {
+                 a = "wrazy";
+            }
+            else
+            {
+                 a = "wyrazów";
+            }
+            return `Zdanie: "${wprowadzonyWyraz}" posiada ${x} ${a}`;
+        };
+
+        const btn = document.querySelector('button');
+        const div = document.querySelector('div');
+        btn.addEventListener('click', ()=>{
+            const wyraz = document.querySelector('input[name="wyraz"]').value;
+            div.textContent = sprawdzenie(wyraz);
+        })
+           
+    </script>
+</body>
+</html>
