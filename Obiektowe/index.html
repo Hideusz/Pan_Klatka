@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script src="komis.js"></script>
+   <script src="samochod.js"></script>
+   <script>
+        const audi = new samochod('audi','A3',12000,2003,15); 
+    //    console.log(audi.wiek());
+    //    console.log(audi.koszt());
+        const kia = new samochod('kia', 'sportage', 19000,2015,8)
+    //    console.log(kia.wiek());
+    //    console.log(kia.koszt());
+        const ford = new samochod('ford', 'fusion', 9000, 2015,11)
+        const asso = new komis('asso');
+        
+        asso.dodajSamochod(kia);
+        asso.dodajSamochod(audi);
+        asso.dodajSamochod(ford);
+        console.log(asso);
+        asso.wyswietlSamochody();
+   </script>
+</body>
+</html>
