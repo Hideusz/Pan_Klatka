@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        font-size: 20px;
+        padding: 50px;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur minus ipsa totam expedita. Consectetur eos quidem eligendi corrupti est impedit vitae dolorum! Doloremque nemo pariatur et sapiente fugit molestiae nihil?</p>
+    <script>
+        const p = document.querySelector('p').style.backgroundColor;
+        const obiektP = document.querySelector('p');
+        obiektP.addEventListener('mouseover', function(){
+            obiektP.style.backgroundColor = "green";
+        })
+        obiektP.addEventListener('mouseout', function(){
+            obiektP.style.backgroundColor = p;
+        })
+    </script>
+</body>
+</html>
