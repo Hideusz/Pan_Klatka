@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 50px;
+            background-color: black;
+            padding: 50px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum hic expedita ex quas optio, error vel iure libero accusamus, aperiam dignissimos magni necessitatibus ut aliquid unde explicabo est, nihil illo?</div>
+
+    <script>
+        function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+}
+        //pobieramy diva
+        const div = document.querySelector('div').textContent;
+        const obiektDiv = document.querySelector('div');
+        const colors = ['green','blue','orange','pink','white'];
+        //przypisujemy zdarzenie z kliknięciem myszy
+        obiektDiv.addEventListener('click', function(){
+            //zmiana koloru czcionki
+            let los = getRandomInt(0,4);
+            obiektDiv.style.color = colors[los];
+        })
+        //przypisujemy zdarzenie z obsługą najechania na diva
+        obiektDiv.addEventListener('mouseover', function(){
+            obiektDiv.textContent = "Nowa wartość";
+        })
+        obiektDiv.addEventListener('mouseout', function(){
+            obiektDiv.textContent = div;
+        })
+    </script>
+</body>
+</html>
