@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: space-between;
+            width: 350px;
+            margin-top: 10px;
+        }
+        span.error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label>Wpisz kolor czerwony</label>
+            <input type="number" name="red">
+        </div>
+        <span class="error"></span>
+        <div>
+            <label>Wpisz kolor zielony</label>
+            <input type="number" name="green">
+        </div>
+        <span class="error"></span>
+        <div>
+            <label>Wpisz kolor niebieski</label>
+            <input type="number" name="blue">
+        </div>
+        <span class="error"></span>
+        <div>
+        <input type="submit" value="Zmień kolor">
+    </div>
+    </form>
+    <script>
+        //pobieramy formularza
+        const formularz = document.querySelector('form');
+        //pobieramy elementy input formularza
+        const kolorCzerwony = document.querySelector('input[name="red"]');
+        const kolorZielony = document.querySelector('input[name="green"]');
+        const kolorNiebieski = document.querySelector('input[name="blue"]');
+        //pobieramy elementy, w których bedziemy umieszczać elementy o błędach
+        const bledy = document.querySelectorAll('span.error');
+        //obsługujemy zdarzenie submit formularza
+        formularz.addEventListener('submit', function(e){
+            //po kliknięciu w przycisk submit wykona sie poniższa funkcja
+            e.preventDefault();
+            //pobieramy wartości pól wpisanych przez użytkownika
+            const red = kolorCzerwony.value*1;
+            const green = kolorZielony.value*1;
+            const blue = kolorNiebieski.value*1;
+            //czyszczenie elementów span
+            bledy.forEach(blad =>{
+                blad.textContent = "";
+            })
+            //walidacja pól
+            if(red < 0 || red > 255 || red == ''){
+                bledy[0].textContent = "Wartość powinna być z zakresu od 0 - 255";
+                return false;
+            }
+            if(green < 0 || green > 255 || green == ''){
+                bledy[1].textContent = "Wartość powinna być z zakresu od 0 - 255";
+                return false;
+            }
+            if(blue < 0 || blue > 255 || blue == ''){
+                bledy[2].textContent = "Wartość powinna być z zakresu od 0 - 255";
+                return false;
+            }
+            //odwołujemy sie do znacznika body i zmieniamy kolor tła na podany kolor
+            document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        })
+    </script>
+</body>
+</html>
