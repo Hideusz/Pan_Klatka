@@ -15,10 +15,10 @@
     <script>
         const formularz = document.querySelector('form');
         const div = document.querySelector('.wynik');
-        var liczby = [];
+        
         formularz.addEventListener('submit',function(e){
-            
             e.preventDefault();
+            var liczby = [];
             let liczba = document.querySelector('input[name="liczba"]').value*1;
             for(let i = 0; i < 100; i++)
             {
