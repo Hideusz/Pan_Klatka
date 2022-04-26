@@ -12,17 +12,14 @@
     </form>
     <div class="tablica"></div>
     <div class="liczbaMax"></div>
-    <div class="liczbaMin"></div>
     <div class="srednia"></div>
     <script>
         const formularz = document.querySelector('form');
         const divTablica = document.querySelector('.tablica');
         const lmax = document.querySelector('.liczbaMax');
-        const lmin = document.querySelector('.liczbaMin');
         const srednia = document.querySelector('.srednia');
         const liczby = [100];
         var max = 0;
-        var min = 0;
         var sredniaLiczb = 0;
         formularz.addEventListener('submit',function(e){
             e.preventDefault();
@@ -37,10 +34,8 @@
             }
             sredniaLiczb = Math.round(sredniaLiczb/100);
             max = Math.max(...liczby);
-            min = Math.min(...liczby);
             divTablica.textContent = liczby.join(', '); 
             lmax.textContent = `Największa liczba w tablicy ${max}`;
-            lmin.textContent = `Njamniejsza liczba w tablicy ${min}`;
             srednia.textContent = `Średnia wynosi: ${sredniaLiczb}`;
         });
     </script>
