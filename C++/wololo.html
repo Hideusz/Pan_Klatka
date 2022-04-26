@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="liczba">
+        <input type="submit" value="Dzielniki">
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const div = document.querySelector('.wynik');
+        var liczby = [];
+        formularz.addEventListener('submit',function(e){
+            
+            e.preventDefault();
+            let liczba = document.querySelector('input[name="liczba"]').value*1;
+            for(let i = 0; i < 100; i++)
+            {
+                if(liczba%i==0)
+                {
+                    liczby.push(i);
+                }
+                
+            }
+            div.textContent = `Dzielniki liczby ${liczba} to :${liczby.join(', ')}`;
+        });
+ 
+    </script>
+</body>
+</html>
