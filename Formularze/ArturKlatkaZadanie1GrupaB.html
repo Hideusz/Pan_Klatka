@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Klatka zadanie 1 grupa B</title>
+</head>
+<body>
+    <div>Hobby:</div>
+        <form action="">
+        <div><input type="radio" name="opcje" value="podroz">Podróżowanie</div>
+        <div><input type="radio" name="opcje" value="czytanie">Czytanie</div>
+        <div><input type="radio" name="opcje" value="plywanie">Pływanie</div>
+        <input type="submit" value="Przycisk">
+    </form>
+    <div class="div"></div>
+    <script>
+        const form = document.querySelector('form');
+        const a = document.querySelector('input[value="podroz"]');
+        const b = document.querySelector('input[value="czytanie"]');
+        const c = document.querySelector('input[value="plywanie"]');
+        const div = document.querySelector('.div');
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(a.checked == true)
+            {
+                div.textContent = "Twoje hobby to podróżowanie";
+            }
+            else if(b.checked == true)
+            {
+                div.textContent = "Twoje hobby to czytanie";
+            }
+            else
+            {
+                div.textContent = "Twoje hobby to pływanie";
+            }
+        })
+
+    </script>
+</body>
+</html>
