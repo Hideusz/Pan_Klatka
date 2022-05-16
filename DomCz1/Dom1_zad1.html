@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Wysokość: 0</h2>
+    <h2>Szerokość: 0</h2>
+
+    <script>
+        const naglowki = document.querySelectorAll('h2');
+        naglowki[0].textContent = `Wysokość: ${window.innerHeight}`;
+        naglowki[1].textContent = `Szerokość: ${window.innerWidth}`;
+        window.addEventListener('resize',function(){
+            naglowki[0].textContent = `Wysokość: ${window.innerHeight}`;
+            naglowki[1].textContent = `Szerokość: ${window.innerWidth}`;
+        })
+    </script>
+</body>
+</html>
